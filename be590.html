@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<!-- Mirrored from www.companycasuals.com/ZTEX/b.jsp?todo=mail&action=mail&caller=item&itemid=S658&prodimage=&itemprice=37.82 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Nov 2025 20:17:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Template: mailform_tmpl.html -->
+<title>Catalog Mailer</title>
+
+<script language="javascript" src="https://www.companycasuals.com/scripts/main.js"></script>
+<script language="javaScript" type="text/javascript">
+function valid_1_Email(str) {
+	return validateEmail(str,1);
+}
+
+function valid_5_Emails(str) {
+	return validateEmail(str,5);
+}
+
+function valid_Subject(str) {
+   var strLen = str.length;
+   if (strLen == 0) {
+      return "";
+   }
+   const specialChars = ['<', '>', '&', "'", '"', '/'];
+   if(specialChars.some(char => str.includes(char))) {
+	   return "";
+   }
+   return str;
+}
+
+
+function valid_Message(str) {
+   var strLen = str.length;
+   if (strLen == 0) {
+      return "";
+   }
+   return str;
+}
+
+
+function checkLength(obj, frm) {
+    var txtlngth = obj.value.length
+    if (txtlngth > 1000) {
+        var txt = obj.value.substring(0,1000);
+        obj.value = txt
+        frm.count.value = "1000"
+        alert("The entered text exceded 1000 and was truncated")
+    } else {
+        frm.count.value = parseInt(txtlngth);
+    }
+    
+    const specialChars = ['<', '>'];
+    var str = obj.value;
+    if(specialChars.some(char => str.includes(char))) {
+    	alert("'<' and '>' characters are not allowed.");
+    	obj.value = "";
+    }
+}
+
+function validateItem(obj) {
+	const specialChars = ['<', '>', '&', "'", '"', '/'];
+	var str = obj.value;
+	if(specialChars.some(char => str.includes(char))) {
+		alert("Special characters are not allowed.");
+		obj.value = "";
+	}
+}
+
+
+function validate_required(field, alerttxt) {
+   alerttxt += " is required.\n";
+   with (field) {
+      if ((value==null) || (value=="")) {
+         alert(alerttxt);
+         return false;
+      }
+      else {
+         return true;
+      }
+   }
+}
+
+function validate_form(thisform) {
+   with (thisform) {
+      if (validate_required(from,    "Your email address") == false) { from.focus(); return false; }
+      if (validate_required(to,      "Recipient's email address") == false) { from.focus(); return false; }
+      if (validate_required(subject, "An email subject") == false) { from.focus(); return false; }
+      if (validate_required(notes,   "An email message") == false) { from.focus(); return false; }
+   }
+}
+
+
+function submitForm(obj, objForm) {
+    var errMsg = ""
+    if (obj.name == "submitBtn") {
+        if (objForm.to.value.length == "0") {
+            errMsg = "To: email address is required.\n"
+        }        
+        if (objForm.from.value.length == "0") {
+            errMsg += "From: (your) email address is required.\n"
+        }        
+        if (objForm.subject.value.length == "0") {
+            errMsg += "Please enter a subject for your email.\n"
+        }        
+        if (objForm.notes.value.length == "0") {
+            errMsg += "Please include a message.\n"
+        }        
+            
+    } else {
+        objForm.itemid.value = objForm.savedid.value
+        objForm.to_do.value = ""
+        objForm.to.value = ""
+        objForm.from.value = ""
+        objForm.subject.value = ""
+        objForm.notes.value = ""
+    }
+    if (errMsg.length > "0") {
+        alert(errMsg)
+    } else {
+        objForm.submit()
+    }
+}
+</script>
+
+<script language="JavaScript" type="text/javascript" src="https://www.companycasuals.com/global.js"> </script>
+
+
+<!-- SpellCheck -->
+<style type="text/css">
+  div.upbutton {
+    position: relative; top: -257; z-index: 1;
+    color: white;
+  }
+  div.upbutton2 {
+    position: relative; top: -96; z-index: 1;
+    color: white;
+  }
+  .newitem {
+        color: #ff0000;
+  }
+  	#validate-email {
+   		display: none;
+	}
+
+</style>
+
+</head>
+
+<body bgcolor="#ffffff" link="#336699" alink="#999999" vlink="#999999" marginheight="0" marginwidth="0" leftmargin="0" topmargin="0">
+   <table width="600" cellpadding="2" cellspacing="0" border="0">
+      <tr>
+         
+            <td><img src="https://www.companycasuals.com/images/spacer.gif" alt="" width="200" height="45" hspace="0" vspace="0" border="0"></td>
+         
+
+         <td valign="bottom" align="left" class="headline">
+            
+               Product Page Email Form
+            
+         </td>
+      </tr>
+   </table>
+
+   <br>    
+   <table width="600" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+         <td valign="top" colspan="4" bgcolor="#336699">
+            <img src="https://www.companycasuals.com/images/spacer.gif" alt="." width="1" height="1" hspace="0" vspace="0" border="0">
+         </td>
+      </tr>
+
+      <tr>
+         <td rowspan="2" valign="top" bgcolor="#336699" width="62">
+            <img src="https://www.companycasuals.com/images/spacer.gif" alt="." width="62" height="1" hspace="0" vspace="0" border="0">
+         </td>
+         <td valign="top" width="358" colspan=2>
+            
+               <form name="mailform" method="post" action="https://www.companycasuals.com/ZTEX/b.jsp">
+            
+            <input type="hidden" name="action" value="mail">
+            <input type="hidden" name="caller" value="item">
+            <input type="hidden" name="to_do" value="item">
+            <input type="hidden" name="itemid" value="S658" id="itemid">
+            <input type="hidden" name="category" value="">
+            <input type="hidden" name="color" value="">
+            <input type="hidden" name="extcol" value="">
+            <input type="hidden" name="price" value="" id="price">
+            <input type="hidden" name="preview" value="Y">
+            <input type="hidden" name="savedid" value="">
+            <input type="hidden" name="prodimage" value="">
+            <input type="hidden" name="swatchColor" value="">
+            
+			<input id="validate-email" type="text" name="validate-email" size="25" maxlength="100" value="" />
+            <table cellpadding="0" cellspacing="0" border="0">
+               <tr>
+                  <td valign="top">
+                     <br><br>
+                     
+                     <p>
+                        <table border="0">
+                           <tr>
+                              <td align="right">Your email address:<b style="color:red">*</b></td>
+                              <td nowrap>
+                                 <input type="text" name="from" value="" size="40"
+                                 onChange="if((this.value=valid_1_Email(document.mailform.from.value))==''){alert('One valid email address is allowed.');}">
+                                 <input type="checkbox" name="sendme" value="Yes" >Send me a copy
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>&nbsp;</td>
+                              <td>One email address is allowed.<br><br></td>
+                           </tr>
+
+                           <tr>
+                              <td align="right">Recipient's email address:<b style="color:red">*</b></td>
+                              <td>
+                                 <input type="text" name="to" value="" size="60"
+                                 onChange="if((this.value=valid_5_Emails(document.mailform.to.value))==''){alert('Up to five valid email addresses are allowed.');}">
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>&nbsp;</td>
+                              <td>You may enter up to 5 email addresses. Just separate multiple addresses with a comma.<br>
+                                  We respect your privacy and we will not share these addresses with anyone.<br><br>
+                              </td>
+                           </tr>
+
+                           <tr>
+                              <td align="right">Subject line:<b style="color:red">*</b></td>
+                              <td>
+                                 <input type="text" name="subject" value="" size="60"
+								 onChange="if((this.value=valid_Subject(document.mailform.subject.value))==''){alert('Please enter a valid email subject.');}">
+                              </td>
+                           </tr>
+
+                           <tr>
+                              <td>&nbsp;</td><td>Message:<b style="color:red">*</b>(1000 character limit)&nbsp;&nbsp;<input type="text" name="count" value="" size="4" onfocus="this.blur" readonly>&nbsp;<small>characters entered.</small><br>
+
+<textarea name="notes" cols="72" rows="5" wrap="soft" onChange="checkLength(this, this.form);" onKeyUp="val = this.value;  if (val.length > 1000) {this.form.count.value='1000'; alert('Sorry, you are over the limit of 1000 characters'); this.value = val.substring(0,1000); welcome.focus() } this.form.count.value=parseInt(this.value.length);"></textarea>
+
+                              <br>
+                              <br>
+                           </tr>
+
+
+<tr>
+<td>&nbsp;</td><td align="left">
+    <table><tr><td valign="top">
+    <table cellspacing="3">
+    <tr><td>Item to send:<br><input type="text" name="productid0" value="S658" size="18" onChange="validateItem(this);" ></td>
+        <td>Price:<br><input type="text" name="itemprice0" value="37.82" size="10" onChange="validateItem(this);" ></td> </tr>
+    <tr><td>Additional Item:<br><input type="text" name="productid1" value="" size="18" onChange="validateItem(this);" ></td>
+        <td>Price:<br><input type="text" name="itemprice1" value="" size="10" onChange="validateItem(this);" ></td></tr>
+    <tr><td>Additional Item:<br><input type="text" name="productid2" value="" size="18" onChange="validateItem(this);" ></td>
+        <td>Price:<br><input type="text" name="itemprice2" value="" size="10" onChange="validateItem(this);" ></td> </tr>
+    <tr><td>Additional Item:<br><input type="text" name="productid3" value="" size="18" onChange="validateItem(this);" ></td>
+        <td>Price:<br><input type="text" name="itemprice3" value="" size="10" onChange="validateItem(this);" ></td> </tr>
+    <tr><td>Additional Item:<br><input type="text" name="productid4" value="" size="18" onChange="validateItem(this);" ></td>
+        <td>Price:<br><input type="text" name="itemprice4" value="" size="10" onChange="validateItem(this);" ></td> </tr>
+    </table></td><td valign="top">&nbsp;&nbsp;</td><td valign="top">
+    <table cellspacing="3">    
+    <tr><td>Additional Item:<br><input type="text" name="productid5" value="" size="18" onChange="validateItem(this);" ></td>
+         <td>Price:<br><input type="text" name="itemprice5" value="" size="10" onChange="validateItem(this);" ></td> </tr>
+    <tr><td>Additional Item:<br><input type="text" name="productid6" value="" size="18" onChange="validateItem(this);" ></td>
+         <td>Price:<br><input type="text" name="itemprice6" value="" size="10" onChange="validateItem(this);" ></td> </tr>
+    <tr><td>Additional Item:<br><input type="text" name="productid7" value="" size="18" onChange="validateItem(this);" ></td>
+         <td>Price:<br><input type="text" name="itemprice7" value="" size="10" onChange="validateItem(this);" ></td> </tr>
+    <tr><td>Additional Item:<br><input type="text" name="productid8" value="" size="18" onChange="validateItem(this);" ></td>
+         <td>Price:<br><input type="text" name="itemprice8" value="" size="10" onChange="validateItem(this);" ></td> </tr>
+    <tr><td>Additional Item:<br><input type="text" name="productid9" value="" size="18" onChange="validateItem(this);" ></td>
+       <td>Price:<br><input type="text" name="itemprice9" value="" size="10" onChange="validateItem(this);" ></td> </tr>
+    </table>
+    </td></tr></table></td>
+</tr>
+
+<tr>
+<td colspan=2 align=center>
+<input type=button name="submitBtn"  value="Preview" onClick="submitForm(this, this.form);">
+<input type=button name="resetBtn"   value="Reset"   onClick="submitForm(this, this.form);">
+</td>
+</tr>
+</table>
+
+</form>                 
+
+<!-- SpellCheck -->
+
+
+    <div class="upbutton">
+ 
+        <form name="spell">
+          <script>
+
+</script>
+        </form>
+        <form name="send" action="https://www.companycasuals.com/cgi-bin/spell.pl" method="POST" target="SpellChecker">
+          <input type="hidden" name="checkme" />
+          <input type="hidden" name="form" />
+          <input type="hidden" name="field" />
+          <input type="hidden" name="spell" value="check" />
+        </form>
+      </div>
+
+</td></tr>
+</table>
+</td>
+<td valign="top" bgcolor="#336699" rowspan=2><img src="https://www.companycasuals.com/images/spacer.gif" alt="." width="1" height="170" hspace="0" vspace="0" border="0"><br></td>
+</tr>
+<tr><td>
+<blockquote>
+
+<br>
+Email a Product Page by following these easy steps:
+<ol type="1">
+<li>You have the option to send multiple items at once by adding a single item into each Additional Item text box.</li>
+
+
+   <li>You also have the option to assign a price amount to each item.  Leaving it blank will send the email with no pricing.
+       Do not precede any entered amount with the dollar($) sign.  Example: 12.99, 0, 12.50</li>
+
+
+<li><b style="color:red">*</b>Indicates required field.</li>
+<li>Valid email addresses must contain an ampersand (@) and a period (.).</li>
+<li>Click the PreView button to proof email before sending.</li>
+</ol>
+
+</td></tr>
+
+</table>
+
+</body>
+
+<!-- Mirrored from www.companycasuals.com/ZTEX/b.jsp?todo=mail&action=mail&caller=item&itemid=S658&prodimage=&itemprice=37.82 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Nov 2025 20:17:19 GMT -->
+</html>
